@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block content %}
+
+<div style="border-radius: 5px; background-color: #b1b1b1; padding: 20px;">
+
+    {% if "valido" in request.GET %}
+
+        <p style="color: black;">Información enviada correctamente, muchas gracias.</p>
+
+    {% endif %}
+
+    <form action="" method="POST" style="text-align: center;">
+    {% csrf_token %}
+    <table style="color: black; margin: 20px auto; text-align: left;">{{miFormulario.as_table}}</table>
+    <input type="submit" value="Enviar" style="width: 150px; background-color: #428bca; color: white; padding: 12px 20px; border-radius: 4px; cursor: pointer;">
+
+    </form>
+</div>
+
+{% endblock %}
